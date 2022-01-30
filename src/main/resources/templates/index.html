@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ledis Aplication</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <script type="text/javascript" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="form-group p-3 mb-2 bg-light text-dark" style="height: 500px;">
+        <div style="text-align: center;">
+            <h1>My Ledis App</h1>
+        </div>
+        <div class="overflow-auto form-group " id="displayCommandLine" style="height: 400px;">
+        </div>
+    </div>
+    <div class="form-group row bg-dark ">
+        <label class="col-form-label text-white"> &nbsp;&nbsp;>Ledis:</label>
+        <div class="col-sm-11">
+            <form th:action="@{/sendkey}" method="post">
+                <label>
+                    <input type="text" name="key" id="key" class="form-control-plaintext text-white p-2 " style="width: 1000px;border:#212529">
+                </label>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        divDisplayCommandLine = $("#displayCommandLine");
+
+        $('form').submit(function(event) {
+            commandLine = $("input[name=key]").val();
+            divDisplayCommandLine.append("<h4> >" + commandLine + "</h4>")
+            $.ajax({
+                method: $(this).attr('method'),
+                url: $(this).attr('action'),
+                data: $(this).serialize(),
+            }).done(function(response) {
+                divDisplayCommandLine.append("<h4>" + response + "</h4>")
+                document.getElementById('key').value = "";
+            });
+            event.preventDefault(); // <- avoid reloading
+        });
+    });
+
+
+</script>
+</body>
+</html>
