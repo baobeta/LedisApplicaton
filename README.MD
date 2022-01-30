@@ -19,3 +19,5 @@ Utils:
 +) Snapshot: I try to reserve sets and strings into temporary variables.
 
 ![alt](https://firebasestorage.googleapis.com/v0/b/ledis-3458f.appspot.com/o/Untitled%20Diagram.drawio.png?alt=media&token=db8d6f0b-aab3-4740-b118-459e12362838)
+
+ Link : 139.59.194.136
