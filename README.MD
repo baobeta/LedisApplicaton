@@ -11,4 +11,4 @@ Data Structure:
 Utils:
 +) Expire: I try to check on both set and string.
 +) Snapshot: I try to reserve sets and strings into temporary variables.
-![alt](https://drive.google.com/file/d/1i9M_l9sfglFOF4udl-NQCD5qz1ty4DtH/view?usp=sharing)
+![alt](https://firebasestorage.googleapis.com/v0/b/ledis-3458f.appspot.com/o/Untitled%20Diagram.drawio.png?alt=media&token=db8d6f0b-aab3-4740-b118-459e12362838)
